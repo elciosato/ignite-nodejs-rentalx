@@ -2,7 +2,7 @@ import { Category } from "../models/category";
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
-} from "./ICategoriesRepository";
+} from "../interfaces/ICategoriesRepository";
 
 class PostgresCategoriesRepository implements ICategoriesRepository {
   findByName(name: string): Category {
