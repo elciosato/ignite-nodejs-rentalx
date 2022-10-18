@@ -134,3 +134,6 @@ build/
 
 # Temporary folder
 tmp/
+
+# Postgres database
+pgdata/

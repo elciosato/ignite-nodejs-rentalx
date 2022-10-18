@@ -1,0 +1,12 @@
+{
+    "type": "postgres",
+    "localhost": "localhost",
+    "port": "5432",
+    "username": "rentalxUsr",
+    "password": "Ignite123",
+    "database": "rentalxDB",
+    "migrations": ["src/database/migrations/*.ts"],
+    "cli": {
+        "migrationsDir": "src/database/migrations"
+    }
+}
