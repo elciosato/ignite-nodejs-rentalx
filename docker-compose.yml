@@ -1,0 +1,29 @@
+version: "3.0"
+
+services:
+  app:
+    build: .
+    container_name: rentalx
+    restart: unless-stopped
+    network_mode: host
+    # ports:
+    #   - 3000:3000
+    volumes:
+      - .:/usr/app
+    depends_on:
+      - database
+
+  database:
+    image: postgres
+    container_name: pgDBIgnite
+    restart: unless-stopped
+    network_mode: host
+    # ports:
+    #   - 5432:5432
+    environment:
+      - POSTGRES_USER=rentalxUsr
+      - POSTGRES_PASSWORD=Ignite123
+      - POSTGRES_DB=rentalxDB
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data/pgdata
