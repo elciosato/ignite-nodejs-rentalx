@@ -1,5 +1,7 @@
-import "reflect-metadata";
 import { DataSource } from "typeorm";
+
+import { Category } from "../entities/category";
+import { Specification } from "../entities/Specification";
 
 const AppDataSource = new DataSource({
   type: "postgres",
@@ -10,13 +12,9 @@ const AppDataSource = new DataSource({
   database: "rentalxDB",
   synchronize: false,
   logging: false,
-  entities: [],
+  entities: [Category, Specification],
   migrations: ["src/database/migrations/*.ts"],
   subscribers: [],
 });
-
-export function createConnection(host = "database"): Promise<DataSource> {
-  return AppDataSource.setOptions({ host }).initialize();
-}
 
 export default AppDataSource;

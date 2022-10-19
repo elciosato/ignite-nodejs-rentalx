@@ -1,24 +1,33 @@
+import "reflect-metadata";
 import express from "express";
 import swaggerUI from "swagger-ui-express";
+
+// eslint-disable-next-line import-helpers/order-imports
+import AppDataSource from "./database/DataSource";
+
+import "./shared/container";
 
 import { routes } from "./routes";
 import swaggerFile from "./swagger.json";
 
-import "./database/data-source";
-
-const app = express();
 const port = 3000;
 
-app.use(express.json());
+AppDataSource.initialize()
+  .then(() => {
+    const app = express();
 
-app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerFile));
+    app.use(express.json());
 
-app.use(routes);
+    app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerFile));
 
-app.get("/", (req, res) => {
-  res.json({ message: "Hello World!!!" });
-});
+    app.use(routes);
 
-app.listen(port, () => {
-  console.log("Listening on port", port);
-});
+    app.get("/", (req, res) => {
+      res.json({ message: "Hello World!!!" });
+    });
+
+    app.listen(port, () => {
+      console.log("Listening on port", port);
+    });
+  })
+  .catch((error) => console.log(error));
