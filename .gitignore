@@ -137,3 +137,6 @@ tmp/
 
 # Postgres database
 pgdata/
+
+# vscode settings
+.vscode/
