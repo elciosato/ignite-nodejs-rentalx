@@ -12,6 +12,10 @@ class CreateUsersUseCase {
   ) {}
 
   async execute(data: ICreateUsersDTO): Promise<void> {
+    const userExists = await this.usersRepository.findUserByEmail(data.email);
+    if (userExists) {
+      throw new Error("User email already exists");
+    }
     const passwordHash = await hash(data.password, 8);
     await this.usersRepository.create({ ...data, password: passwordHash });
   }
