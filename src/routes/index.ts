@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { NextFunction, Request, Response, Router } from "express";
 
 import { authRoutes } from "./auth.routes";
 import { categoriesRoutes } from "./categories.routes";

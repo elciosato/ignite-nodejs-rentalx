@@ -1,5 +1,6 @@
 import "reflect-metadata";
-import express from "express";
+import express, { NextFunction, Request, Response } from "express";
+import "express-async-errors";
 import swaggerUI from "swagger-ui-express";
 
 // eslint-disable-next-line import-helpers/order-imports
@@ -9,6 +10,7 @@ import "./shared/container";
 
 import { routes } from "./routes";
 import swaggerFile from "./swagger.json";
+import { AppError } from "./utils/AppError";
 
 const port = 3000;
 
@@ -20,11 +22,20 @@ AppDataSource.initialize()
 
     app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerFile));
 
+    // app.get("/", (req, res) => {
+    //   chicken.log();
+    //   res.json({ message: "Hello World!!!" });
+    // });
+
     app.use(routes);
 
-    app.get("/", (req, res) => {
-      res.json({ message: "Hello World!!!" });
-    });
+    app.use(
+      (err: AppError, req: Request, res: Response, next: NextFunction) => {
+        return res.status(err.statusCode || 500).json({
+          message: err.message || "Something went wrong!",
+        });
+      }
+    );
 
     app.listen(port, () => {
       console.log("Listening on port", port);

@@ -20,6 +20,10 @@ class UsersRepository implements IUsersRepository {
     return this.userRepository.findOneBy({ email });
   }
 
+  async findUserById(id: string): Promise<User> {
+    return this.userRepository.findOneBy({ id });
+  }
+
   async list(): Promise<User[]> {
     return this.userRepository.find();
   }

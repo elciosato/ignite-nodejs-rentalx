@@ -1,6 +1,7 @@
 import { inject, injectable } from "tsyringe";
 
 import { ISpecificationsRepository } from "../../repositories/interfaces/ISpecificationsRepository";
+import { AppError } from "../../utils/AppError";
 
 interface IRequest {
   name: string;
@@ -18,7 +19,7 @@ class CreateSpecificationUseCase {
       await this.specificationsRepository.findByName(name);
 
     if (specificationAlreadExists) {
-      throw new Error("Specification already exists!");
+      throw new AppError("Specification already exists!");
     }
     await this.specificationsRepository.create({ name, description });
   }
