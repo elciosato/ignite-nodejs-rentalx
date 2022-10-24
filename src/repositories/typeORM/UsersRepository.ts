@@ -1,10 +1,10 @@
 import { Repository } from "typeorm";
 
-import AppDataSource from "../database/DataSource";
-import { User } from "../entities/User";
-import { ICreateUsersDTO } from "./interfaces/dtos/ICreateUserDTO";
-import { IUpdateUserAvatarDTO } from "./interfaces/dtos/IUpdateUserAvatarDTO";
-import { IUsersRepository } from "./interfaces/IUsersRepository";
+import AppDataSource from "../../database/DataSource";
+import { User } from "../../entities/User";
+import { ICreateUsersDTO } from "../interfaces/dtos/ICreateUserDTO";
+import { IUpdateUserAvatarDTO } from "../interfaces/dtos/IUpdateUserAvatarDTO";
+import { IUsersRepository } from "../interfaces/IUsersRepository";
 
 class UsersRepository implements IUsersRepository {
   private userRepository: Repository<User>;
