@@ -1,7 +1,7 @@
 import { Repository } from "typeorm";
 
 import AppDataSource from "../../database/DataSource";
-import { User } from "../../entities/User";
+import { User } from "../../infra/typeORM/entities/User";
 import { ICreateUsersDTO } from "../interfaces/dtos/ICreateUserDTO";
 import { IUpdateUserAvatarDTO } from "../interfaces/dtos/IUpdateUserAvatarDTO";
 import { IUsersRepository } from "../interfaces/IUsersRepository";

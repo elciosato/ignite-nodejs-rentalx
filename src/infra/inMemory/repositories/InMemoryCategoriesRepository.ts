@@ -1,6 +1,6 @@
-import { Category } from "../../entities/category";
-import { ICreateCategoryDTO } from "../interfaces/dtos/ICreateCategoryDTO";
-import { ICategoriesRepository } from "../interfaces/ICategoriesRepository";
+import { ICreateCategoryDTO } from "../../../interfaces/dtos/ICreateCategoryDTO";
+import { ICategoriesRepository } from "../../../interfaces/ICategoriesRepository";
+import { Category } from "../../typeORM/entities/category";
 
 class InMemoryCategoriesRepository implements ICategoriesRepository {
   private categoriesRepository: Category[];

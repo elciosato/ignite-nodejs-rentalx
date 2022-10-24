@@ -1,4 +1,4 @@
-import { Category } from "../../entities/category";
+import { Category } from "../infra/typeORM/entities/category";
 import { ICreateCategoryDTO } from "./dtos/ICreateCategoryDTO";
 
 interface ICategoriesRepository {

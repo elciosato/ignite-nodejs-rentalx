@@ -1,6 +1,6 @@
-import { InMemoryUsersRepository } from "../../repositories/inMemory/InMemoryUsersReposiory";
-import { ICreateUsersDTO } from "../../repositories/interfaces/dtos/ICreateUserDTO";
-import { AppError } from "../../utils/AppError";
+import { InMemoryUsersRepository } from "../../infra/inMemory/repositories/InMemoryUsersReposiory";
+import { ICreateUsersDTO } from "../../interfaces/dtos/ICreateUserDTO";
+import { AppError } from "../../shared/utils/AppError";
 import { CreateUsersUseCase } from "../createUser/CreateUserUseCase";
 import { AuthUserUseCase } from "./AuthUserUseCase";
 

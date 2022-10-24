@@ -1,7 +1,7 @@
-import { User } from "../../entities/User";
-import { ICreateUsersDTO } from "../interfaces/dtos/ICreateUserDTO";
-import { IUpdateUserAvatarDTO } from "../interfaces/dtos/IUpdateUserAvatarDTO";
-import { IUsersRepository } from "../interfaces/IUsersRepository";
+import { ICreateUsersDTO } from "../../../interfaces/dtos/ICreateUserDTO";
+import { IUpdateUserAvatarDTO } from "../../../interfaces/dtos/IUpdateUserAvatarDTO";
+import { IUsersRepository } from "../../../interfaces/IUsersRepository";
+import { User } from "../../typeORM/entities/User";
 
 class InMemoryUsersRepository implements IUsersRepository {
   private usersRepository: User[];

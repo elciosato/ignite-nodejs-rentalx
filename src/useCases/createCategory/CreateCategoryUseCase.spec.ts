@@ -1,6 +1,6 @@
-import { InMemoryCategoriesRepository } from "../../repositories/inMemory/InMemoryCategoriesRepository";
-import { ICreateCategoryDTO } from "../../repositories/interfaces/dtos/ICreateCategoryDTO";
-import { AppError } from "../../utils/AppError";
+import { InMemoryCategoriesRepository } from "../../infra/inMemory/repositories/InMemoryCategoriesRepository";
+import { ICreateCategoryDTO } from "../../interfaces/dtos/ICreateCategoryDTO";
+import { AppError } from "../../shared/utils/AppError";
 import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 
 let categoriesRepository: InMemoryCategoriesRepository;

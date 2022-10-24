@@ -1,8 +1,8 @@
 import { inject, injectable } from "tsyringe";
 
-import { IUpdateUserAvatarDTO } from "../../repositories/interfaces/dtos/IUpdateUserAvatarDTO";
-import { IUsersRepository } from "../../repositories/interfaces/IUsersRepository";
-import { deleteUploadsFile } from "../../utils/file";
+import { IUpdateUserAvatarDTO } from "../../interfaces/dtos/IUpdateUserAvatarDTO";
+import { IUsersRepository } from "../../interfaces/IUsersRepository";
+import { deleteUploadsFile } from "../../shared/utils/file";
 
 @injectable()
 class UpdateUserAvatarUseCase {

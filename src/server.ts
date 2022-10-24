@@ -4,13 +4,13 @@ import "express-async-errors";
 import swaggerUI from "swagger-ui-express";
 
 // eslint-disable-next-line import-helpers/order-imports
-import AppDataSource from "./database/DataSource";
+import AppDataSource from "./infra/typeORM/database/DataSource";
 
 import "./shared/container";
 
 import { routes } from "./routes";
+import { AppError } from "./shared/utils/AppError";
 import swaggerFile from "./swagger.json";
-import { AppError } from "./utils/AppError";
 
 const port = 3000;
 
