@@ -1,11 +1,9 @@
 import { Repository } from "typeorm";
 
-import AppDataSource from "../../database/DataSource";
-import { Specification } from "../../infra/typeORM/entities/Specification";
-import {
-  ISpecificationsRepository,
-  ISpecificationsDTO,
-} from "../interfaces/ISpecificationsRepository";
+import { ICreateSpecificationDTO } from "../../../interfaces/dtos/ICreateSpecificationDTO";
+import { ISpecificationsRepository } from "../../../interfaces/ISpecificationsRepository";
+import AppDataSource from "../database/DataSource";
+import { Specification } from "../entities/Specification";
 
 class SpecificationsRepository implements ISpecificationsRepository {
   private specificationReposytory: Repository<Specification>;
@@ -14,11 +12,8 @@ class SpecificationsRepository implements ISpecificationsRepository {
     this.specificationReposytory = AppDataSource.getRepository(Specification);
   }
 
-  async create({ name, description }: ISpecificationsDTO): Promise<void> {
-    const specification = this.specificationReposytory.create({
-      name,
-      description,
-    });
+  async create(data: ICreateSpecificationDTO): Promise<void> {
+    const specification = this.specificationReposytory.create(data);
 
     await this.specificationReposytory.save(specification);
   }
