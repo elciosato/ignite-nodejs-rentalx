@@ -1,0 +1,146 @@
+[
+{
+  "id": "b7ab52a4-d4bc-44e2-b27b-3c59a9ba632a",
+  "name": "Corolla",
+  "description": "Toyota Corolla",
+  "daily_rate": 100,
+  "license_plate": "ABC 0001",
+  "fine_amount": 50,
+  "brand": "Toyota",
+  "category_id": "category",
+  "available": false,
+  "created_at?": "2022-10-25T06:26"
+},
+{
+  "id": "bdec1547-5d91-45f0-854b-ceef00776ff4",
+  "name": "Corolla",
+  "description": "Toyota Corolla",
+  "daily_rate": 100,
+  "license_plate": "ABC 0002",
+  "fine_amount": 50,
+  "brand": "Toyota",
+  "category_id": "category1",
+  "available": true,
+  "created_at?": "2022-10-25T06:26"
+},
+{
+  "id": "bdec1547-5d91-45f0-854b-ceef00776ff4",
+  "name": "Corolla",
+  "description": "Toyota Corolla",
+  "daily_rate": 100,
+  "license_plate": "ABC 0003",
+  "fine_amount": 50,
+  "brand": "Toyota",
+  "category_id": "category2",
+  "available": true,
+  "created_at?": "2022-10-25T06:26"
+},
+{
+  "id": "bdec1547-5d91-45f0-854b-ceef00776ff4",
+  "name": "Corolla",
+  "description": "Toyota Corolla",
+  "daily_rate": 100,
+  "license_plate": "ABC 0004",
+  "fine_amount": 50,
+  "brand": "Toyota",
+  "category_id": "category3",
+  "available": true,
+  "created_at?": "2022-10-25T06:26"
+},
+
+{
+  "id": "de9cf2e7-782e-4cd8-a825-67918ab47921",
+  "name": "Tucson",
+  "description": "Hyundai Tucson",
+  "daily_rate": 100,
+  "license_plate": "ABC 0005",
+  "fine_amount": 50,
+  "brand": "Hyundai",
+  "category_id": "category",
+  "available": false,
+  "created_at?": "2022-10-25T06:26"
+},
+{
+  "id": "de9cf2e7-782e-4cd8-a825-67918ab47921",
+  "name": "Tucson",
+  "description": "Hyundai",
+  "daily_rate": 100,
+  "license_plate": "ABC 0006",
+  "fine_amount": 50,
+  "brand": "Hyundai",
+  "category_id": "category1",
+  "available": true,
+  "created_at?": "2022-10-25T06:26"
+},
+{
+  "id": "de9cf2e7-782e-4cd8-a825-67918ab47921",
+  "name": "Tucson",
+  "description": "Hyundai",
+  "daily_rate": 100,
+  "license_plate": "ABC 0007",
+  "fine_amount": 50,
+  "brand": "Hyundai",
+  "category_id": "category2",
+  "available": true,
+  "created_at?": "2022-10-25T06:26"
+},{
+  "id": "de9cf2e7-782e-4cd8-a825-67918ab47921",
+  "name": "Tucson",
+  "description": "Hyundai",
+  "daily_rate": 100,
+  "license_plate": "ABC 0008",
+  "fine_amount": 50,
+  "brand": "Hyundai",
+  "category_id": "category3",
+  "available": true,
+  "created_at?": "2022-10-25T06:26"
+},
+{
+  "id": "de9cf2e7-782e-4cd8-a825-67918ab47921",
+  "name": "Tiguan",
+  "description": "VW Tiguan",
+  "daily_rate": 100,
+  "license_plate": "ABC 0009",
+  "fine_amount": 50,
+  "brand": "VW",
+  "category_id": "category",
+  "available": false,
+  "created_at?": "2022-10-25T06:26"
+},
+{
+  "id": "de9cf2e7-782e-4cd8-a825-67918ab47921",
+  "name": "Tiguan",
+  "description": "VW Tiguan",
+  "daily_rate": 100,
+  "license_plate": "ABC 0010",
+  "fine_amount": 50,
+  "brand": "VW",
+  "category_id": "category1",
+  "available": true,
+  "created_at?": "2022-10-25T06:26"
+},
+{
+  "id": "de9cf2e7-782e-4cd8-a825-67918ab47921",
+  "name": "Tiguan",
+  "description": "VW Tiguan",
+  "daily_rate": 100,
+  "license_plate": "ABC 0011",
+  "fine_amount": 50,
+  "brand": "VW",
+  "category_id": "category2",
+  "available": true,
+  "created_at?": "2022-10-25T06:26"
+},
+{
+  "id": "de9cf2e7-782e-4cd8-a825-67918ab47921",
+  "name": "Tiguan",
+  "description": "VW Tiguan",
+  "daily_rate": 100,
+  "license_plate": "ABC 0012",
+  "fine_amount": 50,
+  "brand": "VW",
+  "category_id": "category3",
+  "available": true,
+  "created_at?": "2022-10-25T06:26"
+}
+]

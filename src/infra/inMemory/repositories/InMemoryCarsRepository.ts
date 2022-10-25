@@ -1,12 +1,15 @@
 import { ICreateCarDTO } from "../../../interfaces/dtos/ICreateCarDTO";
 import { ICarRepository } from "../../../interfaces/ICarRepository";
+import { IFindAvailableCars } from "../../../interfaces/request/IFindAvailableCars";
 import { Car } from "../../typeORM/entities/Car";
+import carsFile from "./carsFile.json";
 
 class InMemoryCarsRepository implements ICarRepository {
   private carsRepository: Car[];
   constructor() {
-    this.carsRepository = [];
+    this.carsRepository = carsFile;
   }
+
   async create(data: ICreateCarDTO): Promise<void> {
     const car = new Car();
     Object.assign(car, {
@@ -18,6 +21,17 @@ class InMemoryCarsRepository implements ICarRepository {
 
   async findByLicensePlate(licensePlate: string): Promise<Car> {
     return this.carsRepository.find((c) => c.license_plate === licensePlate);
+  }
+
+  async findAvailable(data: IFindAvailableCars): Promise<Car[]> {
+    return this.carsRepository.filter((c) => {
+      return (
+        c.available === true &&
+        (!data.name || data.name === c.name) &&
+        (!data.brand || data.brand === c.brand) &&
+        (!data.category_id || data.category_id === c.category_id)
+      );
+    });
   }
 }
 
