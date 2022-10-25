@@ -7,7 +7,7 @@
   "license_plate": "ABC 0001",
   "fine_amount": 50,
   "brand": "Toyota",
-  "category_id": "category",
+  "category_id": "2b7183ec-4355-46ed-958e-c4a9126ae0f8",
   "available": false,
   "created_at?": "2022-10-25T06:26"
 },
@@ -19,7 +19,7 @@
   "license_plate": "ABC 0002",
   "fine_amount": 50,
   "brand": "Toyota",
-  "category_id": "category1",
+  "category_id": "c1d1d5e2-ecbe-43ef-80b6-b5d90a6c83b9",
   "available": true,
   "created_at?": "2022-10-25T06:26"
 },
@@ -31,7 +31,7 @@
   "license_plate": "ABC 0003",
   "fine_amount": 50,
   "brand": "Toyota",
-  "category_id": "category2",
+  "category_id": "1437775d-9af7-48e0-a447-d5ee5ac8d77e",
   "available": true,
   "created_at?": "2022-10-25T06:26"
 },
@@ -43,7 +43,7 @@
   "license_plate": "ABC 0004",
   "fine_amount": 50,
   "brand": "Toyota",
-  "category_id": "category3",
+  "category_id": "2f68c011-27bd-452a-914e-421467c6d1c9",
   "available": true,
   "created_at?": "2022-10-25T06:26"
 },
@@ -56,7 +56,7 @@
   "license_plate": "ABC 0005",
   "fine_amount": 50,
   "brand": "Hyundai",
-  "category_id": "category",
+  "category_id": "2b7183ec-4355-46ed-958e-c4a9126ae0f8",
   "available": false,
   "created_at?": "2022-10-25T06:26"
 },
@@ -68,7 +68,7 @@
   "license_plate": "ABC 0006",
   "fine_amount": 50,
   "brand": "Hyundai",
-  "category_id": "category1",
+  "category_id": "c1d1d5e2-ecbe-43ef-80b6-b5d90a6c83b9",
   "available": true,
   "created_at?": "2022-10-25T06:26"
 },
@@ -80,7 +80,7 @@
   "license_plate": "ABC 0007",
   "fine_amount": 50,
   "brand": "Hyundai",
-  "category_id": "category2",
+  "category_id": "1437775d-9af7-48e0-a447-d5ee5ac8d77e",
   "available": true,
   "created_at?": "2022-10-25T06:26"
 },{
@@ -91,7 +91,7 @@
   "license_plate": "ABC 0008",
   "fine_amount": 50,
   "brand": "Hyundai",
-  "category_id": "category3",
+  "category_id": "2f68c011-27bd-452a-914e-421467c6d1c9",
   "available": true,
   "created_at?": "2022-10-25T06:26"
 },
@@ -103,7 +103,7 @@
   "license_plate": "ABC 0009",
   "fine_amount": 50,
   "brand": "VW",
-  "category_id": "category",
+  "category_id": "2b7183ec-4355-46ed-958e-c4a9126ae0f8",
   "available": false,
   "created_at?": "2022-10-25T06:26"
 },
@@ -115,7 +115,7 @@
   "license_plate": "ABC 0010",
   "fine_amount": 50,
   "brand": "VW",
-  "category_id": "category1",
+  "category_id": "c1d1d5e2-ecbe-43ef-80b6-b5d90a6c83b9",
   "available": true,
   "created_at?": "2022-10-25T06:26"
 },
@@ -127,7 +127,7 @@
   "license_plate": "ABC 0011",
   "fine_amount": 50,
   "brand": "VW",
-  "category_id": "category2",
+  "category_id": "1437775d-9af7-48e0-a447-d5ee5ac8d77e",
   "available": true,
   "created_at?": "2022-10-25T06:26"
 },
@@ -139,7 +139,7 @@
   "license_plate": "ABC 0012",
   "fine_amount": 50,
   "brand": "VW",
-  "category_id": "category3",
+  "category_id": "2f68c011-27bd-452a-914e-421467c6d1c9",
   "available": true,
   "created_at?": "2022-10-25T06:26"
 }
