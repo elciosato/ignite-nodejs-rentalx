@@ -12,14 +12,20 @@ class CarsRepository implements ICarRepository {
   constructor() {
     this.carsRepository = AppDataSource.getRepository(Car);
   }
-  async create(data: ICreateCarDTO): Promise<void> {
+  async create(data: ICreateCarDTO): Promise<Car> {
     const car = this.carsRepository.create(data);
 
-    await this.carsRepository.save(car);
+    return this.carsRepository.save(car);
   }
+
+  async findById(id: string): Promise<Car> {
+    return this.carsRepository.findOneBy({ id });
+  }
+
   async findByLicensePlate(licensePlate: string): Promise<Car> {
     return this.carsRepository.findOneBy({ license_plate: licensePlate });
   }
+
   async findAvailable(data: IFindAvailableCars): Promise<Car[]> {
     const carsQuery = this.carsRepository
       .createQueryBuilder()

@@ -1,14 +1,15 @@
 import { ICreateCategoryDTO } from "../../../interfaces/dtos/ICreateCategoryDTO";
 import { ICategoriesRepository } from "../../../interfaces/ICategoriesRepository";
 import { Category } from "../../typeORM/entities/category";
+import categoriesFile from "./categoriesFile.json";
 
 class InMemoryCategoriesRepository implements ICategoriesRepository {
   private categoriesRepository: Category[];
 
   constructor() {
-    this.categoriesRepository = [];
+    this.categoriesRepository = categoriesFile;
   }
-  async create(data: ICreateCategoryDTO): Promise<void> {
+  async create(data: ICreateCategoryDTO): Promise<Category> {
     const category = new Category();
 
     Object.assign(category, {
@@ -17,6 +18,7 @@ class InMemoryCategoriesRepository implements ICategoriesRepository {
     });
 
     this.categoriesRepository.push(category);
+    return category;
   }
   async findByName(name: string): Promise<Category> {
     return this.categoriesRepository.find((c) => c.name === name);

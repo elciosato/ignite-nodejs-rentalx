@@ -3,7 +3,8 @@ import { ICreateCarDTO } from "./dtos/ICreateCarDTO";
 import { IFindAvailableCars } from "./request/IFindAvailableCars";
 
 interface ICarRepository {
-  create(data: ICreateCarDTO): Promise<void>;
+  create(data: ICreateCarDTO): Promise<Car>;
+  findById(id: string): Promise<Car>;
   findByLicensePlate(licensePlate: string): Promise<Car>;
   findAvailable(data: IFindAvailableCars): Promise<Car[]>;
 }

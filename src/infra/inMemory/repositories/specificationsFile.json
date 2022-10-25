@@ -1,0 +1,26 @@
+[
+	{
+		"id" : "e70548f2-e423-4f9b-ae1f-26b5c2f0bb38",
+		"name" : "Ar condicionado",
+		"description" : "Carro com ar condicionado",
+  	"created_at?": "2022-10-25T06:26"
+	},
+	{
+		"id" : "98467bd3-3ec3-48ce-b916-b16be48789cf",
+		"name" : "Vidros Eletricos",
+		"description" : "Carro com vidros eletricos",
+  	"created_at?": "2022-10-25T06:26"
+	},
+	{
+		"id" : "7c59e0d0-29ed-43bb-80f2-2b49bdce2c3b",
+		"name" : "Direcao Hidraulica",
+		"description" : "Carro com direcao hidraulica",
+  	"created_at?": "2022-10-25T06:26"
+	},
+	{
+		"id" : "5cf6578b-bbfa-4842-b729-82f376341871",
+		"name" : "Farois de LED",
+		"description" : "Carro com farois de LED",
+  	"created_at?": "2022-10-25T06:26"
+	}
+]

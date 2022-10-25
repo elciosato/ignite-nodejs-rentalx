@@ -10,13 +10,18 @@ class InMemoryCarsRepository implements ICarRepository {
     this.carsRepository = carsFile;
   }
 
-  async create(data: ICreateCarDTO): Promise<void> {
+  async create(data: ICreateCarDTO): Promise<Car> {
     const car = new Car();
     Object.assign(car, {
       ...data,
       available: true,
     });
     this.carsRepository.push(car);
+    return car;
+  }
+
+  async findById(id: string): Promise<Car> {
+    return this.carsRepository.find((c) => c.id === id);
   }
 
   async findByLicensePlate(licensePlate: string): Promise<Car> {

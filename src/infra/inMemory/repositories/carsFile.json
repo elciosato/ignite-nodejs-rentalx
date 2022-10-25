@@ -21,7 +21,14 @@
   "brand": "Toyota",
   "category_id": "c1d1d5e2-ecbe-43ef-80b6-b5d90a6c83b9",
   "available": true,
-  "created_at?": "2022-10-25T06:26"
+  "created_at?": "2022-10-25T06:26",
+  "specifications": [
+        {
+          "id": "e70548f2-e423-4f9b-ae1f-26b5c2f0bb38",
+          "name": "Ar condicionado",
+          "description": "Carro com ar condicionado"
+        }
+  ]
 },
 {
   "id": "bdec1547-5d91-45f0-854b-ceef00776ff4",

@@ -1,0 +1,26 @@
+[
+	{
+		"id" : "c1d1d5e2-ecbe-43ef-80b6-b5d90a6c83b9",
+		"name" : "SUV",
+		"description" : "Utilitário Esportivo",
+  	"created_at?": "2022-10-25T06:26"
+	},
+	{
+		"id" : "1437775d-9af7-48e0-a447-d5ee5ac8d77e",
+		"name" : "Hatch",
+		"description" : "Carro compacto com porta traseira",
+  	"created_at?": "2022-10-25T06:26"
+	},
+	{
+		"id" : "2f68c011-27bd-452a-914e-421467c6d1c9",
+		"name" : "Station Wagon",
+		"description" : "Carro longo com porta traseira",
+  	"created_at?": "2022-10-25T06:26"
+	},
+	{
+		"id" : "2b7183ec-4355-46ed-958e-c4a9126ae0f8",
+		"name" : "Sedan",
+		"description" : "Carro com carroceria divida em tres volumes",
+  	"created_at?": "2022-10-25T06:26"
+	}
+]
