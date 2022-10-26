@@ -1,6 +1,7 @@
 import { DataSource } from "typeorm";
 
 import { Car } from "../entities/Car";
+import { CarImage } from "../entities/CarImage";
 import { Category } from "../entities/category";
 import { Specification } from "../entities/Specification";
 import { User } from "../entities/User";
@@ -14,7 +15,7 @@ const AppDataSource = new DataSource({
   database: "rentalxDB",
   synchronize: false,
   logging: false,
-  entities: [Category, Specification, User, Car],
+  entities: [Category, Specification, User, Car, CarImage],
   migrations: ["src/infra/typeORM/database/migrations/*.ts"],
   subscribers: [],
 });
