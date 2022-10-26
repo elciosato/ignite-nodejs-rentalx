@@ -1,6 +1,6 @@
 import { CarImage } from "../infra/typeORM/entities/CarImage";
-import { IUploadCarImageDTO } from "./dtos/IUploadCarImageDTO";
+import { IUploadCarImagesDTO } from "./dtos/IUploadCarImagesDTO";
 
 export interface ICarsImagesRepository {
-  create(data: IUploadCarImageDTO): Promise<CarImage>;
+  create(data: IUploadCarImagesDTO): Promise<CarImage>;
 }

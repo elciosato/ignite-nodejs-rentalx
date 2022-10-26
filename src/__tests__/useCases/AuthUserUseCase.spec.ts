@@ -1,8 +1,8 @@
 import { InMemoryUsersRepository } from "../../infra/inMemory/repositories/InMemoryUsersReposiory";
 import { ICreateUsersDTO } from "../../interfaces/dtos/ICreateUserDTO";
 import { AppError } from "../../shared/utils/AppError";
-import { CreateUsersUseCase } from "../createUser/CreateUserUseCase";
-import { AuthUserUseCase } from "./AuthUserUseCase";
+import { AuthUserUseCase } from "../../useCases/authUser/AuthUserUseCase";
+import { CreateUsersUseCase } from "../../useCases/createUser/CreateUserUseCase";
 
 let usersRepository: InMemoryUsersRepository;
 let createUserUseCase: CreateUsersUseCase;

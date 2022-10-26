@@ -2,7 +2,7 @@ import { inject, injectable } from "tsyringe";
 
 import { Car } from "../../infra/typeORM/entities/Car";
 import { ICreateCarSpecificationDTO } from "../../interfaces/dtos/ICreateCarSpecificationDTO";
-import { ICarRepository } from "../../interfaces/ICarRepository";
+import { ICarsRepository } from "../../interfaces/ICarsRepository";
 import { ISpecificationsRepository } from "../../interfaces/ISpecificationsRepository";
 import { AppError } from "../../shared/utils/AppError";
 
@@ -10,7 +10,7 @@ import { AppError } from "../../shared/utils/AppError";
 class CreateCarSpecificationUseCase {
   constructor(
     @inject("CarsRepository")
-    private carsRepository: ICarRepository,
+    private carsRepository: ICarsRepository,
     @inject("SpecificationsRepository")
     private specificationsRepository: ISpecificationsRepository
   ) {}

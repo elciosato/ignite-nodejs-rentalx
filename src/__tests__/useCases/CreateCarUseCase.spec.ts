@@ -1,7 +1,7 @@
 import { InMemoryCarsRepository } from "../../infra/inMemory/repositories/InMemoryCarsRepository";
 import { ICreateCarDTO } from "../../interfaces/dtos/ICreateCarDTO";
 import { AppError } from "../../shared/utils/AppError";
-import { CreateCarUseCase } from "./CreateCarUseCase";
+import { CreateCarUseCase } from "../../useCases/createCar/CreateCarUseCase";
 
 let carsRepository: InMemoryCarsRepository;
 let createCarUseCase: CreateCarUseCase;
@@ -34,7 +34,7 @@ describe("Create a Car", () => {
       name: "Car's name",
       description: "Car's description",
       daily_rate: 100,
-      license_plate: "ABC1234",
+      license_plate: "ABC1235",
       fine_amount: 100,
       brand: "BMW",
       category_id: "category",

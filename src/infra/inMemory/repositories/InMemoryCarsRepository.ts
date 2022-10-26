@@ -1,10 +1,10 @@
 import { ICreateCarDTO } from "../../../interfaces/dtos/ICreateCarDTO";
-import { ICarRepository } from "../../../interfaces/ICarRepository";
+import { ICarsRepository } from "../../../interfaces/ICarsRepository";
 import { IFindAvailableCars } from "../../../interfaces/request/IFindAvailableCars";
 import { Car } from "../../typeORM/entities/Car";
 import carsFile from "./carsFile.json";
 
-class InMemoryCarsRepository implements ICarRepository {
+class InMemoryCarsRepository implements ICarsRepository {
   private carsRepository: Car[];
   constructor() {
     this.carsRepository = carsFile;

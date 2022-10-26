@@ -1,12 +1,12 @@
 import { Repository } from "typeorm";
 
 import { ICreateCarDTO } from "../../../interfaces/dtos/ICreateCarDTO";
-import { ICarRepository } from "../../../interfaces/ICarRepository";
+import { ICarsRepository } from "../../../interfaces/ICarsRepository";
 import { IFindAvailableCars } from "../../../interfaces/request/IFindAvailableCars";
 import AppDataSource from "../database/DataSource";
 import { Car } from "../entities/Car";
 
-class CarsRepository implements ICarRepository {
+class CarsRepository implements ICarsRepository {
   private carsRepository: Repository<Car>;
 
   constructor() {

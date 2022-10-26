@@ -1,7 +1,7 @@
 import { inject, injectable } from "tsyringe";
 
 import { CarImage } from "../../infra/typeORM/entities/CarImage";
-import { IUploadCarImageDTO } from "../../interfaces/dtos/IUploadCarImageDTO";
+import { IUploadCarImageDTO } from "../../interfaces/dtos/IUploadCarImagesDTO";
 import { ICarsImagesRepository } from "../../interfaces/ICarsImagesRepository";
 
 interface IRequest {

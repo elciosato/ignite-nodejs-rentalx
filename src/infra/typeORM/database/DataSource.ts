@@ -2,7 +2,7 @@ import { DataSource } from "typeorm";
 
 import { Car } from "../entities/Car";
 import { CarImage } from "../entities/CarImage";
-import { Category } from "../entities/category";
+import { Category } from "../entities/Category";
 import { Specification } from "../entities/Specification";
 import { User } from "../entities/User";
 

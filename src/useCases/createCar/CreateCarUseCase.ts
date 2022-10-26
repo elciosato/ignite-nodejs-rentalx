@@ -1,14 +1,14 @@
 import { inject, injectable } from "tsyringe";
 
 import { ICreateCarDTO } from "../../interfaces/dtos/ICreateCarDTO";
-import { ICarRepository } from "../../interfaces/ICarRepository";
+import { ICarsRepository } from "../../interfaces/ICarsRepository";
 import { AppError } from "../../shared/utils/AppError";
 
 @injectable()
 class CreateCarUseCase {
   constructor(
     @inject("CarsRepository")
-    private carsRepository: ICarRepository
+    private carsRepository: ICarsRepository
   ) {}
 
   async execute(data: ICreateCarDTO): Promise<void> {
