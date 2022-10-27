@@ -1,11 +1,17 @@
+import { inject, injectable } from "tsyringe";
+
 import { Rental } from "../../infra/typeORM/entities/Rental";
 import { ICreateRentalDTO } from "../../interfaces/dtos/ICreateRentalDTO";
 import { IRentalsRepository } from "../../interfaces/IRentalsRepository";
 import { AppError } from "../../shared/utils/AppError";
-import { dateDiffInHours } from "../../shared/utils/dateDiffInHours";
+import { dateDiffNowInHours } from "../../shared/utils/dateDiffNowInHours";
 
+@injectable()
 class CreateRentalUseCase {
-  constructor(private rentalsRepository: IRentalsRepository) {}
+  constructor(
+    @inject("RentalsRepository")
+    private rentalsRepository: IRentalsRepository
+  ) {}
 
   async execute(data: ICreateRentalDTO): Promise<Rental> {
     const minHours = 24;
@@ -28,7 +34,8 @@ class CreateRentalUseCase {
       );
     }
 
-    const duration = dateDiffInHours(data.expected_return_date, new Date());
+    const duration = dateDiffNowInHours(data.expected_return_date);
+    console.log("Duration: ", duration);
 
     if (duration < minHours) {
       throw new AppError(
