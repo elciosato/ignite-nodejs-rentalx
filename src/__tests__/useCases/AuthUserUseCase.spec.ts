@@ -1,22 +1,22 @@
 import { InMemoryUsersRepository } from "../../infra/inMemory/repositories/InMemoryUsersReposiory";
-import { ICreateUsersDTO } from "../../interfaces/dtos/ICreateUserDTO";
+import { ICreateUserDTO } from "../../interfaces/dtos/ICreateUserDTO";
 import { AppError } from "../../shared/utils/AppError";
 import { AuthUserUseCase } from "../../useCases/authUser/AuthUserUseCase";
-import { CreateUsersUseCase } from "../../useCases/createUser/CreateUserUseCase";
+import { CreateUserUseCase } from "../../useCases/createUser/CreateUserUseCase";
 
 let usersRepository: InMemoryUsersRepository;
-let createUserUseCase: CreateUsersUseCase;
+let createUserUseCase: CreateUserUseCase;
 let authUserUseCase: AuthUserUseCase;
 
 describe("Authenticate User", () => {
   beforeEach(async () => {
     usersRepository = new InMemoryUsersRepository();
-    createUserUseCase = new CreateUsersUseCase(usersRepository);
+    createUserUseCase = new CreateUserUseCase(usersRepository);
     authUserUseCase = new AuthUserUseCase(usersRepository);
   });
 
   it("Should be able to authenticate an user", async () => {
-    const user: ICreateUsersDTO = {
+    const user: ICreateUserDTO = {
       name: "Harry Potter",
       email: "harrypotter@gmail.com",
       password: "test123123",
@@ -44,7 +44,7 @@ describe("Authenticate User", () => {
 
   it("Should not be able to authenticate an email with incorrect password", async () => {
     expect(async () => {
-      const user: ICreateUsersDTO = {
+      const user: ICreateUserDTO = {
         name: "Harry Potter",
         email: "harrypotter@gmail.com",
         password: "test123123",
