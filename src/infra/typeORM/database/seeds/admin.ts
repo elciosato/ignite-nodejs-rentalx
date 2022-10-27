@@ -6,7 +6,7 @@ import AppDataSource from "../DataSource";
 AppDataSource.initialize()
   .then(async () => {
     const password = await hash("admin123", 8);
-    const result = await AppDataSource.query(
+    await AppDataSource.query(
       `
       insert into users(id, name, email, password, driver_license, "isAdmin") 
       values ($1, $2, $3, $4, $5, $6);

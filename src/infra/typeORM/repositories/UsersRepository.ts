@@ -1,6 +1,6 @@
 import { Repository } from "typeorm";
 
-import { ICreateUsersDTO } from "../../../interfaces/dtos/ICreateUserDTO";
+import { ICreateUserDTO } from "../../../interfaces/dtos/ICreateUserDTO";
 import { IUpdateUserAvatarDTO } from "../../../interfaces/dtos/IUpdateUserAvatarDTO";
 import { IUsersRepository } from "../../../interfaces/IUsersRepository";
 import AppDataSource from "../database/DataSource";
@@ -12,7 +12,7 @@ class UsersRepository implements IUsersRepository {
   constructor() {
     this.userRepository = AppDataSource.getRepository(User);
   }
-  async create(data: ICreateUsersDTO): Promise<void> {
+  async create(data: ICreateUserDTO): Promise<void> {
     const user = this.userRepository.create(data);
     await this.userRepository.save(user);
   }

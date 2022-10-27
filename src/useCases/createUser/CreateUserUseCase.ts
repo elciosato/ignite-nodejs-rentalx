@@ -1,18 +1,18 @@
 import { hash } from "bcrypt";
 import { inject, injectable } from "tsyringe";
 
-import { ICreateUsersDTO } from "../../interfaces/dtos/ICreateUserDTO";
+import { ICreateUserDTO } from "../../interfaces/dtos/ICreateUserDTO";
 import { IUsersRepository } from "../../interfaces/IUsersRepository";
 import { AppError } from "../../shared/utils/AppError";
 
 @injectable()
-class CreateUsersUseCase {
+class CreateUserUseCase {
   constructor(
     @inject("UsersRepository")
     private usersRepository: IUsersRepository
   ) {}
 
-  async execute(data: ICreateUsersDTO): Promise<void> {
+  async execute(data: ICreateUserDTO): Promise<void> {
     const userExists = await this.usersRepository.findUserByEmail(data.email);
     if (userExists) {
       throw new AppError("User email already exists");
@@ -22,4 +22,4 @@ class CreateUsersUseCase {
   }
 }
 
-export { CreateUsersUseCase };
+export { CreateUserUseCase };

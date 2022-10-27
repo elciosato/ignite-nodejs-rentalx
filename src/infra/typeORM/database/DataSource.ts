@@ -13,7 +13,7 @@ const AppDataSource = new DataSource({
   port: 5432,
   username: "rentalxUsr",
   password: "Ignite123",
-  database: "rentalxDB",
+  database: process.env.NODE_ENV === "test" ? "rentalxdb_test" : "rentalxDB",
   synchronize: false,
   logging: false,
   entities: [Category, Specification, User, Car, CarImage, Rental],

@@ -35,7 +35,6 @@ class CreateRentalUseCase {
     }
 
     const duration = dateDiffNowInHours(data.expected_return_date);
-    console.log("Duration: ", duration);
 
     if (duration < minHours) {
       throw new AppError(

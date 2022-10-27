@@ -1,4 +1,4 @@
-import { ICreateUsersDTO } from "../../../interfaces/dtos/ICreateUserDTO";
+import { ICreateUserDTO } from "../../../interfaces/dtos/ICreateUserDTO";
 import { IUpdateUserAvatarDTO } from "../../../interfaces/dtos/IUpdateUserAvatarDTO";
 import { IUsersRepository } from "../../../interfaces/IUsersRepository";
 import { User } from "../../typeORM/entities/User";
@@ -9,7 +9,7 @@ class InMemoryUsersRepository implements IUsersRepository {
   constructor() {
     this.usersRepository = [];
   }
-  async create(data: ICreateUsersDTO): Promise<void> {
+  async create(data: ICreateUserDTO): Promise<void> {
     const user = new User();
     Object.assign(user, data);
     this.usersRepository.push(user);
