@@ -35,7 +35,7 @@ describe("Authenticate User", () => {
 
   it("Should not be able to authenticate an email that it does not exists", async () => {
     expect(async () => {
-      const result = await authUserUseCase.execute({
+      await authUserUseCase.execute({
         email: "test@test.com",
         password: "123456",
       });
@@ -53,7 +53,7 @@ describe("Authenticate User", () => {
 
       await createUserUseCase.execute(user);
 
-      const result = await authUserUseCase.execute({
+      await authUserUseCase.execute({
         email: user.email,
         password: "incorrectpassword",
       });
