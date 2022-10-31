@@ -9,3 +9,10 @@ export function dateDiffNowInHours(date: Date): number {
 
   return dayjs(dateEnd).diff(dateStart, "hours");
 }
+
+export function dateDiffDays(start: Date, end: Date): number {
+  const dateStart = dayjs(start).local().format();
+  const dateEnd = dayjs(end).local().format();
+
+  return dayjs(dateEnd).diff(dateStart, "day", true);
+}

@@ -5,7 +5,7 @@ import { ICreateRentalDTO } from "../../interfaces/dtos/ICreateRentalDTO";
 import { ICarsRepository } from "../../interfaces/ICarsRepository";
 import { IRentalsRepository } from "../../interfaces/IRentalsRepository";
 import { AppError } from "../../shared/utils/AppError";
-import { dateDiffNowInHours } from "../../shared/utils/dateDiffNowInHours";
+import { dateDiffNowInHours } from "../../shared/utils/dateProvider";
 
 @injectable()
 class CreateRentalUseCase {

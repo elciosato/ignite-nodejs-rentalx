@@ -17,6 +17,7 @@ class RentalsRepository implements IRentalsRepository {
 
     return this.rentalsRepository.save(rental);
   }
+
   async findOpenRentalByCar(car_id: string): Promise<Rental> {
     return this.rentalsRepository
       .createQueryBuilder()
@@ -24,12 +25,17 @@ class RentalsRepository implements IRentalsRepository {
       .andWhere("end_date is NULL")
       .getOne();
   }
+
   async findOpenRentalByUser(user_id: string): Promise<Rental> {
     return this.rentalsRepository
       .createQueryBuilder()
       .where("user_id = :user_id", { user_id })
       .andWhere("end_date is NULL")
       .getOne();
+  }
+
+  async findById(id: string): Promise<Rental> {
+    return this.rentalsRepository.findOneBy({ id });
   }
 }
 export { RentalsRepository };
