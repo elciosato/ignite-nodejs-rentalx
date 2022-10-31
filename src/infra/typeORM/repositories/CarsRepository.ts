@@ -3,6 +3,7 @@ import { Repository } from "typeorm";
 import { ICreateCarDTO } from "../../../interfaces/dtos/ICreateCarDTO";
 import { ICarsRepository } from "../../../interfaces/ICarsRepository";
 import { IFindAvailableCars } from "../../../interfaces/request/IFindAvailableCars";
+import { IUpdateAvailableCar } from "../../../interfaces/request/IUpdateAvailableCar";
 import AppDataSource from "../database/DataSource";
 import { Car } from "../entities/Car";
 
@@ -43,6 +44,16 @@ class CarsRepository implements ICarsRepository {
       });
     }
     return carsQuery.getMany();
+  }
+
+  async updateAvailable(data: IUpdateAvailableCar): Promise<void> {
+    await this.carsRepository
+      .createQueryBuilder()
+      .update()
+      .set({ available: data.available })
+      .where("id = :id")
+      .setParameters({ id: data.id })
+      .execute();
   }
 }
 

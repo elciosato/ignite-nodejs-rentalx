@@ -2,6 +2,7 @@ import { inject, injectable } from "tsyringe";
 
 import { Rental } from "../../infra/typeORM/entities/Rental";
 import { ICreateRentalDTO } from "../../interfaces/dtos/ICreateRentalDTO";
+import { ICarsRepository } from "../../interfaces/ICarsRepository";
 import { IRentalsRepository } from "../../interfaces/IRentalsRepository";
 import { AppError } from "../../shared/utils/AppError";
 import { dateDiffNowInHours } from "../../shared/utils/dateDiffNowInHours";
@@ -10,7 +11,9 @@ import { dateDiffNowInHours } from "../../shared/utils/dateDiffNowInHours";
 class CreateRentalUseCase {
   constructor(
     @inject("RentalsRepository")
-    private rentalsRepository: IRentalsRepository
+    private rentalsRepository: IRentalsRepository,
+    @inject("CarsRepository")
+    private carsRepository: ICarsRepository
   ) {}
 
   async execute(data: ICreateRentalDTO): Promise<Rental> {
@@ -41,7 +44,10 @@ class CreateRentalUseCase {
         `The expected rental duration must to be more than 24 hours`
       );
     }
-
+    await this.carsRepository.updateAvailable({
+      id: data.car_id,
+      available: false,
+    });
     return this.rentalsRepository.create(data);
   }
 }

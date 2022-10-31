@@ -1,17 +1,23 @@
 import dayjs from "dayjs";
 
+import { InMemoryCarsRepository } from "../../infra/inMemory/repositories/InMemoryCarsRepository";
 import { InMemoryRentalsRepository } from "../../infra/inMemory/repositories/InMemoryRentalsRepository";
 import { AppError } from "../../shared/utils/AppError";
 import { CreateRentalUseCase } from "../../useCases/createRental/CreateRentalUseCase";
 
 let rentalsRepository: InMemoryRentalsRepository;
+let carsRepository: InMemoryCarsRepository;
 let createRentalUseCase: CreateRentalUseCase;
 const expectedDate = dayjs(new Date()).add(2, "days").toDate();
 
 describe("Create Rental", () => {
   beforeEach(() => {
     rentalsRepository = new InMemoryRentalsRepository();
-    createRentalUseCase = new CreateRentalUseCase(rentalsRepository);
+    carsRepository = new InMemoryCarsRepository();
+    createRentalUseCase = new CreateRentalUseCase(
+      rentalsRepository,
+      carsRepository
+    );
   });
 
   it("Should be able to create a new rental", async () => {

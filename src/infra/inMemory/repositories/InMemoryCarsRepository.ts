@@ -1,6 +1,7 @@
 import { ICreateCarDTO } from "../../../interfaces/dtos/ICreateCarDTO";
 import { ICarsRepository } from "../../../interfaces/ICarsRepository";
 import { IFindAvailableCars } from "../../../interfaces/request/IFindAvailableCars";
+import { IUpdateAvailableCar } from "../../../interfaces/request/IUpdateAvailableCar";
 import { Car } from "../../typeORM/entities/Car";
 import carsFile from "./carsFile.json";
 
@@ -37,6 +38,11 @@ class InMemoryCarsRepository implements ICarsRepository {
         (!data.category_id || data.category_id === c.category_id)
       );
     });
+  }
+
+  async updateAvailable(data: IUpdateAvailableCar): Promise<void> {
+    const findIndex = this.carsRepository.findIndex((c) => c.id === data.id);
+    this.carsRepository[findIndex].available = data.available;
   }
 }
 
