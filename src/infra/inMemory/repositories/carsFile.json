@@ -31,7 +31,7 @@
   ]
 },
 {
-  "id": "bdec1547-5d91-45f0-854b-ceef00776ff4",
+  "id": "bf1c9412-f94b-4083-905c-81408ea55761",
   "name": "Corolla",
   "description": "Toyota Corolla",
   "daily_rate": 100,
@@ -43,7 +43,7 @@
   "created_at?": "2022-10-25T06:26"
 },
 {
-  "id": "bdec1547-5d91-45f0-854b-ceef00776ff4",
+  "id": "6a30f738-bc39-433f-9e45-9159ddfd48f7",
   "name": "Corolla",
   "description": "Toyota Corolla",
   "daily_rate": 100,
@@ -56,7 +56,7 @@
 },
 
 {
-  "id": "de9cf2e7-782e-4cd8-a825-67918ab47921",
+  "id": "71b96bb8-ce6b-4cd3-a5b8-ad9a8eb76263",
   "name": "Tucson",
   "description": "Hyundai Tucson",
   "daily_rate": 100,
@@ -68,7 +68,7 @@
   "created_at?": "2022-10-25T06:26"
 },
 {
-  "id": "de9cf2e7-782e-4cd8-a825-67918ab47921",
+  "id": "11c012dc-2eff-4945-85a6-591896fa516d",
   "name": "Tucson",
   "description": "Hyundai",
   "daily_rate": 100,
@@ -80,7 +80,7 @@
   "created_at?": "2022-10-25T06:26"
 },
 {
-  "id": "de9cf2e7-782e-4cd8-a825-67918ab47921",
+  "id": "2a4f1591-bd4c-49a1-9c40-5c56633c79a2",
   "name": "Tucson",
   "description": "Hyundai",
   "daily_rate": 100,
@@ -91,7 +91,7 @@
   "available": true,
   "created_at?": "2022-10-25T06:26"
 },{
-  "id": "de9cf2e7-782e-4cd8-a825-67918ab47921",
+  "id": "126447f3-6170-438a-b928-c369f55bd5c7",
   "name": "Tucson",
   "description": "Hyundai",
   "daily_rate": 100,
@@ -103,7 +103,7 @@
   "created_at?": "2022-10-25T06:26"
 },
 {
-  "id": "de9cf2e7-782e-4cd8-a825-67918ab47921",
+  "id": "6cc38e8e-d2a2-4b68-96a7-e8e35894ccf3",
   "name": "Tiguan",
   "description": "VW Tiguan",
   "daily_rate": 100,
@@ -115,7 +115,7 @@
   "created_at?": "2022-10-25T06:26"
 },
 {
-  "id": "de9cf2e7-782e-4cd8-a825-67918ab47921",
+  "id": "ba7473b1-00df-4ab7-97bf-f5cf954cd6f0",
   "name": "Tiguan",
   "description": "VW Tiguan",
   "daily_rate": 100,
@@ -127,7 +127,7 @@
   "created_at?": "2022-10-25T06:26"
 },
 {
-  "id": "de9cf2e7-782e-4cd8-a825-67918ab47921",
+  "id": "ce811e50-e491-4f1c-b073-8a36532c8ed7",
   "name": "Tiguan",
   "description": "VW Tiguan",
   "daily_rate": 100,
@@ -139,7 +139,7 @@
   "created_at?": "2022-10-25T06:26"
 },
 {
-  "id": "de9cf2e7-782e-4cd8-a825-67918ab47921",
+  "id": "3344226f-29b4-4412-94d2-af31750e451c",
   "name": "Tiguan",
   "description": "VW Tiguan",
   "daily_rate": 100,

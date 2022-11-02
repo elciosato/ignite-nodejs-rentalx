@@ -46,19 +46,19 @@ describe("Create a Car", () => {
     expect(car.available).toEqual(true);
   });
 
-  it("Should not be able to have more than one car with same license plate", () => {
-    expect(async () => {
-      const data: ICreateCarDTO = {
-        name: "Car's name",
-        description: "Car's description",
-        daily_rate: 100,
-        license_plate: "ABC1234",
-        fine_amount: 100,
-        brand: "BMW",
-        category_id: "category",
-      };
-      await createCarUseCase.execute(data);
-      await createCarUseCase.execute(data);
-    }).rejects.toBeInstanceOf(AppError);
+  it("Should not be able to have more than one car with same license plate", async () => {
+    const data: ICreateCarDTO = {
+      name: "Car's name",
+      description: "Car's description",
+      daily_rate: 100,
+      license_plate: "XPT9836",
+      fine_amount: 100,
+      brand: "BMW",
+      category_id: "category",
+    };
+    await createCarUseCase.execute(data);
+    await expect(createCarUseCase.execute(data)).rejects.toEqual(
+      new AppError("Car already exists")
+    );
   });
 });

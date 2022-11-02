@@ -22,12 +22,12 @@ describe("Create Rental", () => {
 
   it("Should be able to create a new rental", async () => {
     const data1 = {
-      car_id: "296a23e7-1d16-4e2b-a28f-b7c2d3d184f7",
+      car_id: "bdec1547-5d91-45f0-854b-ceef00776ff4",
       user_id: "08f763ee-a588-4432-81da-ea70a8c1ecbc",
       expected_return_date: expectedDate,
     };
     const data2 = {
-      car_id: "a511c9c1-2b9d-4214-9d07-5d7c9ef8bb1b",
+      car_id: "bf1c9412-f94b-4083-905c-81408ea55761",
       user_id: "492d8943-78b7-4bea-a8d8-727c2a395d8b",
       expected_return_date: expectedDate,
     };
@@ -39,52 +39,54 @@ describe("Create Rental", () => {
   });
 
   it("Should not be able to open a new rental when there is an open rental for the same car", async () => {
-    expect(async () => {
-      const data1 = {
-        car_id: "296a23e7-1d16-4e2b-a28f-b7c2d3d184f7",
-        user_id: "08f763ee-a588-4432-81da-ea70a8c1ecbc",
-        expected_return_date: expectedDate,
-      };
+    const data1 = {
+      car_id: "bdec1547-5d91-45f0-854b-ceef00776ff4",
+      user_id: "08f763ee-a588-4432-81da-ea70a8c1ecbc",
+      expected_return_date: expectedDate,
+    };
 
-      const data2 = {
-        car_id: "296a23e7-1d16-4e2b-a28f-b7c2d3d184f7",
-        user_id: "492d8943-78b7-4bea-a8d8-727c2a395d8b",
-        expected_return_date: expectedDate,
-      };
-
-      await createRentalUseCase.execute(data1);
-      await createRentalUseCase.execute(data2);
-    }).rejects.toBeInstanceOf(AppError);
+    const data2 = {
+      car_id: "bdec1547-5d91-45f0-854b-ceef00776ff4",
+      user_id: "492d8943-78b7-4bea-a8d8-727c2a395d8b",
+      expected_return_date: expectedDate,
+    };
+    await createRentalUseCase.execute(data1);
+    await expect(createRentalUseCase.execute(data2)).rejects.toEqual(
+      new AppError(
+        "New rental is not allowed when there is an open rental for the same car"
+      )
+    );
   });
 
   it("Should not be able to open a new rental when there is an open rental for the same user", async () => {
-    expect(async () => {
-      const data1 = {
-        car_id: "296a23e7-1d16-4e2b-a28f-b7c2d3d184f7",
-        user_id: "08f763ee-a588-4432-81da-ea70a8c1ecbc",
-        expected_return_date: expectedDate,
-      };
+    const data1 = {
+      car_id: "bdec1547-5d91-45f0-854b-ceef00776ff4",
+      user_id: "08f763ee-a588-4432-81da-ea70a8c1ecbc",
+      expected_return_date: expectedDate,
+    };
 
-      const data2 = {
-        car_id: "a511c9c1-2b9d-4214-9d07-5d7c9ef8bb1b",
-        user_id: "08f763ee-a588-4432-81da-ea70a8c1ecbc",
-        expected_return_date: expectedDate,
-      };
+    const data2 = {
+      car_id: "bf1c9412-f94b-4083-905c-81408ea55761",
+      user_id: "08f763ee-a588-4432-81da-ea70a8c1ecbc",
+      expected_return_date: expectedDate,
+    };
 
-      await createRentalUseCase.execute(data1);
-      await createRentalUseCase.execute(data2);
-    }).rejects.toBeInstanceOf(AppError);
+    await createRentalUseCase.execute(data1);
+    await expect(createRentalUseCase.execute(data2)).rejects.toEqual(
+      new AppError(
+        "New rental is not allowed when there is an open rental for the same user"
+      )
+    );
   });
 
   it("Should not be able to open a new rental when expected rental duration is less than 24 hours", async () => {
-    expect(async () => {
-      const data1 = {
-        car_id: "296a23e7-1d16-4e2b-a28f-b7c2d3d184f7",
-        user_id: "08f763ee-a588-4432-81da-ea70a8c1ecbc",
-        expected_return_date: new Date(),
-      };
-
-      await createRentalUseCase.execute(data1);
-    }).rejects.toBeInstanceOf(AppError);
+    const data1 = {
+      car_id: "296a23e7-1d16-4e2b-a28f-b7c2d3d184f7",
+      user_id: "08f763ee-a588-4432-81da-ea70a8c1ecbc",
+      expected_return_date: new Date(),
+    };
+    await expect(createRentalUseCase.execute(data1)).rejects.toEqual(
+      new AppError("The expected rental duration must to be more than 24 hours")
+    );
   });
 });
