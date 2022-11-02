@@ -14,6 +14,9 @@
                 "tags": ["Category"],
                 "summary": "Create a category",
                 "description": "Create a new category",
+                "security": [
+                    { "bearerAuth": [] }
+                ],
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -72,6 +75,150 @@
                         }
                     }
                 }
+            }
+        },
+        "/sessions": {
+            "post": {
+                "tags": ["Auth"],
+                "summary": "Authentication user",
+                "description": "Authenticate user returning JWT token",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "email": "johndoe@example.com",
+                                    "password": "password123"
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "200": {
+                        "description": "User has been authenticated successfuly!"
+                    },
+                    "400": { 
+                        "description": "Email or password incorrect"
+                    }
+                }
+            }
+        },
+        "/cars": {
+            "post": {
+                "tags": ["Car"],
+                "summary": "Create a new car",
+                "description": "Create a new car",
+                "security": [
+                    { "bearerAuth": [] }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/Car"
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "201": {
+                        "description": "Car has been created successfuly!"
+                    },
+                    "400": { 
+                        "description": "Car already exists"
+                    }
+                }
+            }
+        },
+        "/cars/{id}/images": {
+            "post": {
+                "tags": ["Car"],
+                "summary": "Upload car images",
+                "description": "Upload car images",
+                "security": [
+                    { "bearerAuth": [] }
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Car Id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "files": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "format": "binary"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "201": {
+                        "description": "Car images have been uploaded successfuly"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Car": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "daily_rate": {
+                    "type": "number"
+                },
+                "license_plate": {
+                    "type": "string"
+                },
+                "fine_amount": {
+                    "type": "number"
+                },
+                "brand": {
+                    "type": "string"
+                },
+                "category_id": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
             }
         }
     }
