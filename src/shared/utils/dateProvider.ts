@@ -16,3 +16,7 @@ export function dateDiffDays(start: Date, end: Date): number {
 
   return dayjs(dateEnd).diff(dateStart, "day", true);
 }
+
+export function addDays(days: number): Date {
+  return dayjs().add(days, "days").toDate();
+}

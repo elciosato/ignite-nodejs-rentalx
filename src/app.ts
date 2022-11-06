@@ -1,5 +1,5 @@
 import "reflect-metadata";
-
+import * as dotenv from "dotenv";
 import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors";
 import swaggerUI from "swagger-ui-express";
@@ -9,6 +9,8 @@ import "./shared/container";
 import { routes } from "./routes";
 import { AppError } from "./shared/utils/AppError";
 import swaggerFile from "./swagger.json";
+
+dotenv.config({ path: `${__dirname}/../.env` });
 
 const app = express();
 app.use(express.json());

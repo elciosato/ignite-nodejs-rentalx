@@ -6,12 +6,14 @@ import { CategoriesRepository } from "../../infra/typeORM/repositories/Categorie
 import { RentalsRepository } from "../../infra/typeORM/repositories/RentalsRepository";
 import { SpecificationsRepository } from "../../infra/typeORM/repositories/SpecificationsRepository";
 import { UsersRepository } from "../../infra/typeORM/repositories/UsersRepository";
+import { UserTokensRepository } from "../../infra/typeORM/repositories/UserTokensRepository";
 import { ICarsImagesRepository } from "../../interfaces/ICarsImagesRepository";
 import { ICarsRepository } from "../../interfaces/ICarsRepository";
 import { ICategoriesRepository } from "../../interfaces/ICategoriesRepository";
 import { IRentalsRepository } from "../../interfaces/IRentalsRepository";
 import { ISpecificationsRepository } from "../../interfaces/ISpecificationsRepository";
 import { IUsersRepository } from "../../interfaces/IUsersRepository";
+import { IUserTokensRepository } from "../../interfaces/IUserTokensRepository";
 
 container.registerSingleton<ICategoriesRepository>(
   "CategoriesRepository",
@@ -38,4 +40,9 @@ container.registerSingleton<ICarsImagesRepository>(
 container.registerSingleton<IRentalsRepository>(
   "RentalsRepository",
   RentalsRepository
+);
+
+container.registerSingleton<IUserTokensRepository>(
+  "UserTokensRepository",
+  UserTokensRepository
 );
