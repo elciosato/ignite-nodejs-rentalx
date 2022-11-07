@@ -2,9 +2,9 @@ import { resolve } from "path";
 import { inject, injectable } from "tsyringe";
 import { v4 as uuidV4 } from "uuid";
 
-import { UsersRepository } from "../../infra/typeORM/repositories/UsersRepository";
-import { UserTokensRepository } from "../../infra/typeORM/repositories/UserTokensRepository";
-import { EtherealMailProvider } from "../../shared/providers/MailProvider/EtherealMailProvider";
+import { IUsersRepository } from "../../interfaces/IUsersRepository";
+import { IUserTokensRepository } from "../../interfaces/IUserTokensRepository";
+import { IMailProvider } from "../../shared/providers/MailProvider/IMailProvider";
 import { AppError } from "../../shared/utils/AppError";
 import { addHours } from "../../shared/utils/dateProvider";
 
@@ -12,11 +12,11 @@ import { addHours } from "../../shared/utils/dateProvider";
 export class SendForgotPasswordMailUseCase {
   constructor(
     @inject("UsersRepository")
-    private usersRepository: UsersRepository,
+    private usersRepository: IUsersRepository,
     @inject("UserTokensRepository")
-    private userTokensRepository: UserTokensRepository,
+    private userTokensRepository: IUserTokensRepository,
     @inject("EtherealMailProvider")
-    private mailProvider: EtherealMailProvider
+    private mailProvider: IMailProvider
   ) {}
   async execute(email: string): Promise<void> {
     const user = await this.usersRepository.findUserByEmail(email);
