@@ -20,3 +20,7 @@ export function dateDiffDays(start: Date, end: Date): number {
 export function addDays(days: number): Date {
   return dayjs().add(days, "days").toDate();
 }
+
+export function addHours(hours: number): Date {
+  return dayjs().add(hours, "hours").toDate();
+}

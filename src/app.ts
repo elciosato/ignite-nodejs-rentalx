@@ -5,6 +5,7 @@ import "express-async-errors";
 import swaggerUI from "swagger-ui-express";
 
 import "./shared/container";
+import "./shared/providers";
 
 import { routes } from "./routes";
 import { AppError } from "./shared/utils/AppError";

@@ -24,7 +24,7 @@ class ReturnRentalUseCase {
 
     rental.end_date = new Date();
     let rentalDays = dateDiffDays(rental.start_date, rental.end_date);
-    console.log("rentalDays: ", rentalDays);
+
     if (rentalDays < 1) {
       rentalDays = 1;
     }
@@ -35,7 +35,7 @@ class ReturnRentalUseCase {
       rental.expected_return_date,
       rental.end_date
     );
-    console.log("rentalFine: ", rentalFine);
+
     if (rentalFine > 0) {
       rental.total += rentalFine * car.fine_amount;
     }

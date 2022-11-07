@@ -29,4 +29,8 @@ export class UserTokensRepository implements IUserTokensRepository {
   }: IFindByUserIdAndRefreshToken): Promise<UserToken> {
     return this.userTokensRepository.findOneBy({ user_id, refresh_token });
   }
+
+  async findByRefreshToken(refresh_token: string): Promise<UserToken> {
+    return this.userTokensRepository.findOneBy({ refresh_token });
+  }
 }
