@@ -1,18 +1,28 @@
+import * as dotenv from "dotenv";
+
 import { InMemoryUsersRepository } from "../../infra/inMemory/repositories/InMemoryUsersReposiory";
+import { InMemoryUserTokensRepository } from "../../infra/inMemory/repositories/InMemoryUserTokensRepository";
 import { ICreateUserDTO } from "../../interfaces/dtos/ICreateUserDTO";
 import { AppError } from "../../shared/utils/AppError";
 import { AuthUserUseCase } from "../../useCases/authUser/AuthUserUseCase";
 import { CreateUserUseCase } from "../../useCases/createUser/CreateUserUseCase";
 
+dotenv.config({ path: `${__dirname}/../../../.env` });
+
 let usersRepository: InMemoryUsersRepository;
+let userTokensRepository: InMemoryUserTokensRepository;
 let createUserUseCase: CreateUserUseCase;
 let authUserUseCase: AuthUserUseCase;
 
 describe("Authenticate User", () => {
   beforeEach(async () => {
     usersRepository = new InMemoryUsersRepository();
+    userTokensRepository = new InMemoryUserTokensRepository();
     createUserUseCase = new CreateUserUseCase(usersRepository);
-    authUserUseCase = new AuthUserUseCase(usersRepository);
+    authUserUseCase = new AuthUserUseCase(
+      usersRepository,
+      userTokensRepository
+    );
   });
 
   it("Should be able to authenticate an user", async () => {

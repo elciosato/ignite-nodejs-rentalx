@@ -36,7 +36,9 @@ class AuthUserUseCase {
 
     const secret_token = process.env.SECRET_TOKEN;
 
-    const createUserTokenUseCase = container.resolve(CreateUserTokenUseCase);
+    const createUserTokenUseCase = new CreateUserTokenUseCase(
+      this.userTokensRepository
+    );
 
     // Find user by email
     const user = await this.usersRepository.findUserByEmail(email);
