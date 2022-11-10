@@ -2,12 +2,21 @@ import { container } from "tsyringe";
 
 import { EtherealMailProvider } from "./MailProvider/EtherealMailProvider";
 import { IMailProvider } from "./MailProvider/IMailProvider";
+import { IStorageProvider } from "./StorageProvider/IStorageProvider";
+import { LocalStorageProvider } from "./StorageProvider/LocalStorageProvider";
+import { S3StorageProvider } from "./StorageProvider/S3StorageProvider";
 
 container.registerInstance<IMailProvider>(
   "EtherealMailProvider",
   new EtherealMailProvider()
 );
-// container.registerSingleton<IMailProvider>(
-//   "EtherealMailProvider",
-//   EtherealMailProvider
-// );
+
+const storageProvider = {
+  local: LocalStorageProvider,
+  s3: S3StorageProvider,
+};
+
+container.registerSingleton<IStorageProvider>(
+  "StorageProvider",
+  storageProvider[process.env.STORAGE_PROVIDER]
+);

@@ -1,13 +1,12 @@
 import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
-import { container, inject, injectable } from "tsyringe";
+import { inject, injectable } from "tsyringe";
 
 import { UserToken } from "../../infra/typeORM/entities/UserToken";
 import { IUsersRepository } from "../../interfaces/IUsersRepository";
 import { IUserTokensRepository } from "../../interfaces/IUserTokensRepository";
 import { auth } from "../../shared/config/auth";
 import { AppError } from "../../shared/utils/AppError";
-import { addDays } from "../../shared/utils/dateProvider";
 import { CreateUserTokenUseCase } from "../createUserToken/CreateUserTokenUseCase";
 
 interface IRequest {
@@ -23,6 +22,7 @@ interface IResponse {
   token: string;
   refresh_token: string;
 }
+
 @injectable()
 class AuthUserUseCase {
   constructor(

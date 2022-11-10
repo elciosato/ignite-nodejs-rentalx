@@ -14,8 +14,6 @@ import { IRentalsRepository } from "../../interfaces/IRentalsRepository";
 import { ISpecificationsRepository } from "../../interfaces/ISpecificationsRepository";
 import { IUsersRepository } from "../../interfaces/IUsersRepository";
 import { IUserTokensRepository } from "../../interfaces/IUserTokensRepository";
-import { EtherealMailProvider } from "../providers/MailProvider/EtherealMailProvider";
-import { IMailProvider } from "../providers/MailProvider/IMailProvider";
 
 container.registerSingleton<ICategoriesRepository>(
   "CategoriesRepository",
@@ -48,8 +46,3 @@ container.registerSingleton<IUserTokensRepository>(
   "UserTokensRepository",
   UserTokensRepository
 );
-
-// container.registerSingleton<IMailProvider>(
-//   "EtherealMailProvider",
-//   EtherealMailProvider
-// );
