@@ -131,6 +131,7 @@ dist
 
 # My build
 build/
+dist/
 
 # Temporary folder
 tmp/

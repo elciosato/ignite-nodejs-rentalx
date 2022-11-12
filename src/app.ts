@@ -7,6 +7,8 @@ import swaggerUI from "swagger-ui-express";
 import "./shared/container";
 import "./shared/providers";
 
+import { resolve } from "path";
+
 import { routes } from "./routes";
 import { AppError } from "./shared/utils/AppError";
 import swaggerFile from "./swagger.json";
@@ -15,6 +17,8 @@ const app = express();
 app.use(express.json());
 
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerFile));
+app.use("/avatar", express.static(resolve(__dirname, "../uploads/avatar")));
+app.use("/cars", express.static(resolve(__dirname, "../uploads/cars")));
 
 app.get("/", (req, res) => {
   res.json({ message: "Hello World!!!" });
