@@ -16,6 +16,13 @@ services:
     volumes:
       - ${PGDATA}:/var/lib/postgresql/data/pgdata
 
+  redis:
+    image: redis:alpine
+    container_name: redisIgnite
+    restart: unless-stopped
+    ports:
+      -  6379:6379
+
   # app:
   #   build: .
   #   container_name: rentalx
