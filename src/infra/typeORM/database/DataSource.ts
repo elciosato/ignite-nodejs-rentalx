@@ -1,4 +1,4 @@
-import { DataSource } from "typeorm";
+import { DataSource, DataSourceOptions } from "typeorm";
 
 import { Car } from "../entities/Car";
 import { CarImage } from "../entities/CarImage";
@@ -10,15 +10,16 @@ import { UserToken } from "../entities/UserToken";
 
 const AppDataSource = new DataSource({
   type: "postgres",
-  host: "localhost",
-  port: 5432,
-  username: "rentalxUsr",
-  password: "Ignite123",
-  database: process.env.NODE_ENV === "test" ? "rentalxdb_test" : "rentalxDB",
+  host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT),
+  username: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database:
+    process.env.NODE_ENV === "test" ? "rentalxdb_test" : process.env.DB_NAME,
   synchronize: false,
   logging: false,
   entities: [Category, Specification, User, Car, CarImage, Rental, UserToken],
-  migrations: ["src/infra/typeORM/database/migrations/*.ts"],
+  migrations: [process.env.DB_MIGRATION],
   subscribers: [],
 });
 
