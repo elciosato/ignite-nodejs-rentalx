@@ -1,5 +1,6 @@
-import { DataSource, DataSourceOptions } from "typeorm";
+import { DataSource } from "typeorm";
 
+import "dotenv/config";
 import { Car } from "../entities/Car";
 import { CarImage } from "../entities/CarImage";
 import { Category } from "../entities/Category";
