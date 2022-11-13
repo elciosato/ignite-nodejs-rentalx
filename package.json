@@ -16,6 +16,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sentry/node": "^7.19.0",
+    "@sentry/tracing": "^7.19.0",
     "aws-sdk": "^2.1251.0",
     "bcrypt": "^5.1.0",
     "class-transformer": "^0.5.1",
