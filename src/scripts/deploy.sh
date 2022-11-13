@@ -1,5 +1,6 @@
 #!/bin/bash
 
+source ~/.profile
 cd ~/rentalx
 npm i
 npm run build
